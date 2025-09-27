@@ -6,5 +6,5 @@ import javax.xml.bind.annotation.XmlRootElement
 @XmlRootElement(name = "students")
 data class Students(
     @XmlElement(name = "student")
-    var student: List<Student> = listOf(),
+    var student: List<Student> = mutableListOf(),
 )

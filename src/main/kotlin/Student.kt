@@ -10,5 +10,5 @@ data class Student(
     @XmlElement(name = "surname")
     var surname: String? = null,
     @XmlElement(name = "birthday")
-    var birthday: String? = null,
+    var birthday: String? = null
 )

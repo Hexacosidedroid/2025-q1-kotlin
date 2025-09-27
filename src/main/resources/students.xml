@@ -10,4 +10,34 @@
         <surname>Petrov</surname>
         <birthday>11.11.1995</birthday>
     </student>
+    <student>
+        <name>Maria</name>
+        <surname>Sidorova</surname>
+        <birthday>15.03.1993</birthday>
+    </student>
+    <student>
+        <name>Dmitry</name>
+        <surname>Kuznetsov</surname>
+        <birthday>22.07.1996</birthday>
+    </student>
+    <student>
+        <name>Anna</name>
+        <surname>Smirnova</surname>
+        <birthday>05.12.1994</birthday>
+    </student>
+    <student>
+        <name>Alexey</name>
+        <surname>Popov</surname>
+        <birthday>30.08.1995</birthday>
+    </student>
+    <student>
+        <name>Elena</name>
+        <surname>Volkova</surname>
+        <birthday>14.02.1993</birthday>
+    </student>
+    <student>
+        <name>Igor</name>
+        <surname>Novikov</surname>
+        <birthday>03.09.1996</birthday>
+    </student>
 </students>
