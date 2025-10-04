@@ -4,7 +4,7 @@ import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 
 class DataSource {
-
+    // Hikari connection pool implementation
     fun getHikariConnection() = HikariDataSource(HikariConfig().apply {
             driverClassName = "org.postgresql.Driver"
             jdbcUrl = "jdbc:postgresql://localhost:5432/postgres"

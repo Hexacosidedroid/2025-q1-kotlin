@@ -5,11 +5,12 @@ import java.sql.DriverManager
 import javax.xml.bind.JAXBContext
 
 fun main() {
-    //Read XML with Jaxb
+    //Read directory to find files with xml
     val newDir = File("/Users/slava_ivanov_saikyo/2025-q1-kotlin/src/main/resources/new")
-    newDir.walk().forEach { file ->
-        if (file.isFile) {
-            try {
+    newDir.walk().filter { /* filter to xml */ it.extension == "xml" }.forEach { file ->
+        if (file.isFile) { // check for file or not
+            try { // catch errors bloc
+                //Read XML with Jaxb
                 val context = JAXBContext.newInstance(Students::class.java)
                 val unmarshaller = context.createUnmarshaller()
                 val students = unmarshaller.unmarshal(file) as Students
@@ -24,10 +25,12 @@ fun main() {
                 }
                 connection.close()
 
+                // place file to archive
                 file
                     .copyTo(File("/Users/slava_ivanov_saikyo/2025-q1-kotlin/src/main/resources/archive/${file.name}"))
                 file.delete()
             } catch (e: Exception) {
+                // logic for errors, place file to error
                 println(e.message)
                 file.copyTo(
                     File("/Users/slava_ivanov_saikyo/2025-q1-kotlin/src/main/resources/error/${file.name}")
