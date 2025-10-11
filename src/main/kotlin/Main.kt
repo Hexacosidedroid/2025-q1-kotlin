@@ -1,11 +1,11 @@
 package ru.cib
 
+import jakarta.xml.bind.JAXBContext
 import java.io.File
 import java.sql.Date
 import java.sql.Statement
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
-import javax.xml.bind.JAXBContext
 
 fun main() {
     //Read directory to find files with xml
@@ -53,7 +53,8 @@ fun main() {
                 file.delete()
             } catch (e: Exception) {
                 // logic for errors, place file to error
-                println(e)
+                println(e.message)
+                println(e.stackTrace.asList().joinToString("\n"))
                 file.copyTo(
                     File("/Users/slava_ivanov_saikyo/2025-q1-kotlin/src/main/resources/error/${file.name}")
                 )
